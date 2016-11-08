@@ -1,5 +1,3 @@
-#!/bin/bash
-
 from scapy.all import *
 import sys
 import time
