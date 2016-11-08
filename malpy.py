@@ -86,6 +86,8 @@ while 1:
                 synAttk = IP(dst=dstIP) / TCP(dport=dport,
                 sport=RandShort(), flags='S')
                 Attk = sr1(synAttk, inter=0.0000001, timeout=2, verbose=1)
+	    os.system('iptables -F')
+	    print '\niptables -F == True'
 	    print "Returning to menu..."
 	    time.sleep(1)
             break
@@ -134,7 +136,3 @@ while 1:
     else:
         print '\nError Exiting'
         sys.exit("\n")
-
-    os.system('iptables -F')
-    print '\nOption Finished'
-
