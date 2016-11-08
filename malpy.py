@@ -38,7 +38,7 @@ def menu():
 
  2. TCP SYN Flood Attack
 
- 3. UDP Flood Attack
+ 3. UDP Flood Attack (multithreading support, check # comments)
 
  4. q == quit
 
