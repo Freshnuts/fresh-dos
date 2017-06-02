@@ -114,10 +114,10 @@ while 1:
         for i in range(10):
             t = Thread(target=udpAttk, args=(i,))
             t.start()
-	if True:
-	    t.join()
-	    time.sleep(3)
-	    print '\nReturning to menu...'
+	    if True:
+	        t.join()
+	time.sleep(3)
+	print '\nReturning to menu...'
 
 # Check IP status
     elif userInput == 'a':
